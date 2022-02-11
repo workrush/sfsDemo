@@ -1,0 +1,425 @@
+{
+  "accessors": [
+    {
+      "bufferView": 0,
+      "componentType": 5125,
+      "count": 79338,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 1,
+      "componentType": 5126,
+      "count": 48255,
+      "max": [
+        -61.9729766845703,
+        76.7748565673828,
+        220.691879272461
+      ],
+      "min": [
+        -477.011291503906,
+        -0.206703186035156,
+        -219.50553894043
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 2,
+      "componentType": 5126,
+      "count": 48255,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 3,
+      "componentType": 5126,
+      "count": 48255,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 4,
+      "componentType": 5125,
+      "count": 630,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 5,
+      "componentType": 5126,
+      "count": 273,
+      "max": [
+        -477.011322021484,
+        76.3588333129883,
+        207.55908203125
+      ],
+      "min": [
+        -489.893310546875,
+        -0.206699371337891,
+        -204.408645629883
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 6,
+      "componentType": 5126,
+      "count": 273,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 7,
+      "componentType": 5126,
+      "count": 273,
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 8,
+      "componentType": 5125,
+      "count": 37674,
+      "type": "SCALAR"
+    },
+    {
+      "bufferView": 9,
+      "componentType": 5126,
+      "count": 7188,
+      "max": [
+        -62.2079162597656,
+        75.2076568603516,
+        195.874481201172
+      ],
+      "min": [
+        -70.7826232910156,
+        1.91243743896484,
+        -193.548309326172
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 10,
+      "componentType": 5126,
+      "count": 7188,
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 11,
+      "componentType": 5126,
+      "count": 7188,
+      "type": "VEC2"
+    }
+  ],
+  "asset": {
+    "generator": "Substance Painter 7.1.1",
+    "version": "2.0"
+  },
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteLength": 317352,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 579060,
+      "byteOffset": 317352,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 579060,
+      "byteOffset": 896412,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 386040,
+      "byteOffset": 1475472,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2520,
+      "byteOffset": 1861512,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3276,
+      "byteOffset": 1864032,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 3276,
+      "byteOffset": 1867308,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 2184,
+      "byteOffset": 1870584,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 150696,
+      "byteOffset": 1872768,
+      "target": 34963
+    },
+    {
+      "buffer": 0,
+      "byteLength": 86256,
+      "byteOffset": 2023464,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 86256,
+      "byteOffset": 2109720,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteLength": 57504,
+      "byteOffset": 2195976,
+      "target": 34962
+    }
+  ],
+  "buffers": [
+    {
+      "byteLength": 2253480,
+      "uri": "Untitled.bin"
+    }
+  ],
+  "images": [
+    {
+      "uri": "body1_baseColor.png"
+    },
+    {
+      "uri": "body1_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "body1_normal.png"
+    },
+    {
+      "uri": "Server_Back_baseColor.png"
+    },
+    {
+      "uri": "Server_Back_occlusionRoughnessMetallic.png"
+    },
+    {
+      "uri": "Server_Back_normal.png"
+    }
+  ],
+  "materials": [
+    {
+      "alphaMode": "OPAQUE",
+      "name": "body1",
+      "normalTexture": {
+        "index": 2
+      },
+      "occlusionTexture": {
+        "index": 1
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 0
+        },
+        "metallicRoughnessTexture": {
+          "index": 1
+        }
+      }
+    },
+    {
+      "alphaMode": "BLEND",
+      "name": "Server_Back",
+      "normalTexture": {
+        "index": 5
+      },
+      "occlusionTexture": {
+        "index": 4
+      },
+      "pbrMetallicRoughness": {
+        "baseColorTexture": {
+          "index": 3
+        },
+        "metallicRoughnessTexture": {
+          "index": 4
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "name": "body",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 2,
+            "POSITION": 1,
+            "TEXCOORD_0": 3
+          },
+          "indices": 0,
+          "material": 0,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "back",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 6,
+            "POSITION": 5,
+            "TEXCOORD_0": 7
+          },
+          "indices": 4,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    },
+    {
+      "name": "Object001",
+      "primitives": [
+        {
+          "attributes": {
+            "NORMAL": 10,
+            "POSITION": 9,
+            "TEXCOORD_0": 11
+          },
+          "indices": 8,
+          "material": 1,
+          "mode": 4
+        }
+      ]
+    }
+  ],
+  "nodes": [
+    {
+      "children": [
+        1,
+        3,
+        5
+      ],
+      "name": "RootNode"
+    },
+    {
+      "children": [
+        2
+      ],
+      "name": "body",
+      "rotation": [
+        2.1855694143369e-08,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": [
+        0.393700987100601,
+        0.393700987100601,
+        0.393700987100601
+      ],
+      "translation": [
+        5.59694817638956e-05,
+        -8.57947543408955e-06,
+        -3.94464791497739e-07
+      ]
+    },
+    {
+      "mesh": 0,
+      "name": "body"
+    },
+    {
+      "children": [
+        4
+      ],
+      "name": "back",
+      "rotation": [
+        2.1855694143369e-08,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": [
+        0.393700987100601,
+        0.393700987100601,
+        0.393700987100601
+      ],
+      "translation": [
+        8.95649136509746e-05,
+        -0.0922204181551933,
+        -7.60390719278803e-08
+      ]
+    },
+    {
+      "mesh": 1,
+      "name": "back"
+    },
+    {
+      "children": [
+        6
+      ],
+      "name": "Object001",
+      "rotation": [
+        8.14603424714733e-08,
+        0.0,
+        0.0,
+        1.0
+      ],
+      "scale": [
+        0.393700987100601,
+        0.393700987100601,
+        0.393700987100601
+      ],
+      "translation": [
+        1.44071273098234e-05,
+        -8.43859015731141e-06,
+        -3.27626730722841e-06
+      ]
+    },
+    {
+      "mesh": 2,
+      "name": "Object001"
+    }
+  ],
+  "samplers": [
+    {
+      "magFilter": 9729,
+      "minFilter": 9985,
+      "wrapS": 10497,
+      "wrapT": 10497
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "name": "Scene",
+      "nodes": [
+        0
+      ]
+    }
+  ],
+  "textures": [
+    {
+      "sampler": 0,
+      "source": 0
+    },
+    {
+      "sampler": 0,
+      "source": 1
+    },
+    {
+      "sampler": 0,
+      "source": 2
+    },
+    {
+      "sampler": 0,
+      "source": 3
+    },
+    {
+      "sampler": 0,
+      "source": 4
+    },
+    {
+      "sampler": 0,
+      "source": 5
+    }
+  ]
+}

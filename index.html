@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Workrush</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+		<link type="text/css" rel="stylesheet" href="./assets/main.css">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
+		
+		<style>
+			body {
+				
+				color: #000;
+				overflow-x:hidden;
+				overflow-y:hidden;
+				font-family: 'Nunito', sans-serif;
+				background-color: #ffffff;
+				background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='100%25' gradientTransform='rotate(360,720,410)'%3E%3Cstop offset='0' stop-color='%23ffffff'/%3E%3Cstop offset='1' stop-color='%23E5E5E5'/%3E%3C/linearGradient%3E%3Cpattern patternUnits='userSpaceOnUse' id='b' width='666' height='555' x='0' y='0' viewBox='0 0 1080 900'%3E%3Cg fill-opacity='0.04'%3E%3Cpolygon fill='%23444' points='90 150 0 300 180 300'/%3E%3Cpolygon points='90 150 180 0 0 0'/%3E%3Cpolygon fill='%23AAA' points='270 150 360 0 180 0'/%3E%3Cpolygon fill='%23DDD' points='450 150 360 300 540 300'/%3E%3Cpolygon fill='%23999' points='450 150 540 0 360 0'/%3E%3Cpolygon points='630 150 540 300 720 300'/%3E%3Cpolygon fill='%23DDD' points='630 150 720 0 540 0'/%3E%3Cpolygon fill='%23444' points='810 150 720 300 900 300'/%3E%3Cpolygon fill='%23FFF' points='810 150 900 0 720 0'/%3E%3Cpolygon fill='%23DDD' points='990 150 900 300 1080 300'/%3E%3Cpolygon fill='%23444' points='990 150 1080 0 900 0'/%3E%3Cpolygon fill='%23DDD' points='90 450 0 600 180 600'/%3E%3Cpolygon points='90 450 180 300 0 300'/%3E%3Cpolygon fill='%23666' points='270 450 180 600 360 600'/%3E%3Cpolygon fill='%23AAA' points='270 450 360 300 180 300'/%3E%3Cpolygon fill='%23DDD' points='450 450 360 600 540 600'/%3E%3Cpolygon fill='%23999' points='450 450 540 300 360 300'/%3E%3Cpolygon fill='%23999' points='630 450 540 600 720 600'/%3E%3Cpolygon fill='%23FFF' points='630 450 720 300 540 300'/%3E%3Cpolygon points='810 450 720 600 900 600'/%3E%3Cpolygon fill='%23DDD' points='810 450 900 300 720 300'/%3E%3Cpolygon fill='%23AAA' points='990 450 900 600 1080 600'/%3E%3Cpolygon fill='%23444' points='990 450 1080 300 900 300'/%3E%3Cpolygon fill='%23222' points='90 750 0 900 180 900'/%3E%3Cpolygon points='270 750 180 900 360 900'/%3E%3Cpolygon fill='%23DDD' points='270 750 360 600 180 600'/%3E%3Cpolygon points='450 750 540 600 360 600'/%3E%3Cpolygon points='630 750 540 900 720 900'/%3E%3Cpolygon fill='%23444' points='630 750 720 600 540 600'/%3E%3Cpolygon fill='%23AAA' points='810 750 720 900 900 900'/%3E%3Cpolygon fill='%23666' points='810 750 900 600 720 600'/%3E%3Cpolygon fill='%23999' points='990 750 900 900 1080 900'/%3E%3Cpolygon fill='%23999' points='180 0 90 150 270 150'/%3E%3Cpolygon fill='%23444' points='360 0 270 150 450 150'/%3E%3Cpolygon fill='%23FFF' points='540 0 450 150 630 150'/%3E%3Cpolygon points='900 0 810 150 990 150'/%3E%3Cpolygon fill='%23222' points='0 300 -90 450 90 450'/%3E%3Cpolygon fill='%23FFF' points='0 300 90 150 -90 150'/%3E%3Cpolygon fill='%23FFF' points='180 300 90 450 270 450'/%3E%3Cpolygon fill='%23666' points='180 300 270 150 90 150'/%3E%3Cpolygon fill='%23222' points='360 300 270 450 450 450'/%3E%3Cpolygon fill='%23FFF' points='360 300 450 150 270 150'/%3E%3Cpolygon fill='%23444' points='540 300 450 450 630 450'/%3E%3Cpolygon fill='%23222' points='540 300 630 150 450 150'/%3E%3Cpolygon fill='%23AAA' points='720 300 630 450 810 450'/%3E%3Cpolygon fill='%23666' points='720 300 810 150 630 150'/%3E%3Cpolygon fill='%23FFF' points='900 300 810 450 990 450'/%3E%3Cpolygon fill='%23999' points='900 300 990 150 810 150'/%3E%3Cpolygon points='0 600 -90 750 90 750'/%3E%3Cpolygon fill='%23666' points='0 600 90 450 -90 450'/%3E%3Cpolygon fill='%23AAA' points='180 600 90 750 270 750'/%3E%3Cpolygon fill='%23444' points='180 600 270 450 90 450'/%3E%3Cpolygon fill='%23444' points='360 600 270 750 450 750'/%3E%3Cpolygon fill='%23999' points='360 600 450 450 270 450'/%3E%3Cpolygon fill='%23666' points='540 600 630 450 450 450'/%3E%3Cpolygon fill='%23222' points='720 600 630 750 810 750'/%3E%3Cpolygon fill='%23FFF' points='900 600 810 750 990 750'/%3E%3Cpolygon fill='%23222' points='900 600 990 450 810 450'/%3E%3Cpolygon fill='%23DDD' points='0 900 90 750 -90 750'/%3E%3Cpolygon fill='%23444' points='180 900 270 750 90 750'/%3E%3Cpolygon fill='%23FFF' points='360 900 450 750 270 750'/%3E%3Cpolygon fill='%23AAA' points='540 900 630 750 450 750'/%3E%3Cpolygon fill='%23FFF' points='720 900 810 750 630 750'/%3E%3Cpolygon fill='%23222' points='900 900 990 750 810 750'/%3E%3Cpolygon fill='%23222' points='1080 300 990 450 1170 450'/%3E%3Cpolygon fill='%23FFF' points='1080 300 1170 150 990 150'/%3E%3Cpolygon points='1080 600 990 750 1170 750'/%3E%3Cpolygon fill='%23666' points='1080 600 1170 450 990 450'/%3E%3Cpolygon fill='%23DDD' points='1080 900 1170 750 990 750'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect x='0' y='0' fill='url(%23b)' width='100%25' height='100%25'/%3E%3C/svg%3E");
+				background-attachment: fixed;
+				background-size: cover;
+				
+				background-position: center center;
+			}
+
+			a {
+				color: #f00;
+			}
+			
+			.annotation-marker{
+				position: absolute;
+			    	border-radius: 50%;
+			    	cursor: pointer;
+			    	padding: 0;
+			    	margin: 0;
+			    	border: 2px solid #dddc;
+			    	background: #00000061;
+			    	padding: 1px 9px;
+			    	transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+				opacity:0;
+			}
+			
+			.annotation-marker span{
+				font-size: 13px;
+				font-weight: 600;
+				color: white;
+			}
+
+			#annotation-description{
+				position: absolute;
+			    bottom: 0;
+			    left: 0;
+			    width: 100vw;
+			    background: #7b82ea75;
+			    height: 0;
+			    padding: 16px;
+			    color: #ffffff;
+			    font-size: 1.15rem;
+			    backdrop-filter: blur(12px);
+			    opacity:0;
+			}
+
+			#splash{
+				position: fixed;
+				width:1vw;
+				height:1vw;
+				transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+				border-radius: 50%;
+				top:50%;
+				left:50%;
+				background: #7683eb;
+				z-index:500;
+			}
+
+			
+			#loadingtext {
+			  position: absolute;
+			    z-index: 600;
+			    color: white;
+			    left: 0%;
+			    transform: translate(-50%) !important;
+			    top: 47%;
+			    text-transform: uppercase;
+			    font: 1000 4em/1 "Nunito", sans-serif;
+			    letter-spacing: 6px;
+			    filter: drop-shadow(2px 4px 6px #333) brightness(1.2);
+			    /* font-weight: 800; */
+			    padding: 0.25em 0 0.325em;
+			    display: block;
+			    margin: 0 auto;
+			    text-shadow: 0 0 80px rgb(255 255 255 / 50%);
+			    background: url(https://i.ibb.co/RDTnNrT/animated-text-fill.png) repeat-y;
+			    -webkit-background-clip: text;
+			    background-clip: text;
+			    -webkit-text-fill-color: transparent;
+			    -webkit-animation: aitf 80s linear infinite;
+			    -webkit-transform: translate3d(0, 0, 0);
+			    -webkit-backface-visibility: hidden;
+			     transition: opacity 0.3s ease-in-out;
+			     opacity:0;
+			}
+
+			
+			@-webkit-keyframes aitf {
+			  0% {
+			    background-position: 0% 50%;
+			  }
+			  100% {
+			    background-position: 100% 50%;
+			  }
+			}
+
+			.frame {
+			  position: absolute;
+			  top: 35%;
+			  left: 50%;
+			  width: 400px;
+			  height: 400px;
+			  margin-top: -200px;
+			  margin-left: -200px;
+			  border-radius: 2px;
+			  z-index:600;
+			  color: #fff;
+			  opacity:0;
+			  transition: opacity 0.9s ease-in-out;
+			}
+
+			.center {
+			  position: absolute;
+			  width: 220px;
+			  height: 220px;
+			  top: 90px;
+			  left: 90px;
+			  transform: scale(1.1);
+    			  opacity: 0.9;
+			}
+			
+
+			.dot-1 {
+			  position: absolute;
+			  z-index: 3;
+			  width: 30px;
+			  height: 30px;
+			  top: 95px;
+			  left: 95px;
+			  background: #f16441;
+			  border-radius: 50%;
+			  -webkit-animation-fill-mode: both;
+				  animation-fill-mode: both;
+			  -webkit-animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+				  animation: jump-jump-1 2s cubic-bezier(0.21, 0.98, 0.6, 0.99) infinite alternate;
+			}
+
+			
+			
+			
+			#ar-cta{
+			    background: white;
+			    /* border: none; */
+			    text-transform: capitalize;
+			    padding: 0.4rem 1rem;
+			    border-radius: 8rem;
+			    background: #f7f7f7;
+			    top: 16px;
+			    right: 16px;
+			    position: absolute;
+			    color: #7683eb;
+			    font-family: inherit;
+			    font-size: 0.9rem;
+			    border: 2px solid #7683eb;
+			    outline: none;
+			    font-weight: bold;
+			    box-shadow: 0px 5px 16px 1px rgb(118 131 235 / 46%);
+			}
+
+			#params-hldr{
+				position: absolute;
+				width: 300px;
+				padding: 1rem;
+				top: 5%;
+				left: 5%;
+				z-index: 100;
+			}
+
+			.form-hldr {
+    			margin-bottom: 1rem;
+			}
+
+			.form-hldr input{
+				width: 30px;
+    			margin: 0 0 0 0.8rem;
+				text-align: center;
+			}
+
+			button{
+				background: #4d4dea;
+				color: white;
+				padding: 0.3rem 1rem;
+				outline: none;
+				box-shadow: none;
+				border-radius: 4px;
+				font-size: 0.9rem;
+				border: none;
+				text-transform: capitalize;
+			}
+
+			#info-hldr {
+					position: absolute;
+					z-index: 110;
+					top: 27%;
+					left: 10%;
+					background: #e5e6fae3;
+					padding: 0.7rem 0.6rem;
+					border-radius: 5px;
+					box-shadow: 1px 1px 10px 1px rgb(0 0 0 / 20%);
+					transition: 0.3s ease-in-out;
+					opacity: 0;
+			}
+
+			#info-hldr .item {
+				/* font-size: 0.8rem; */
+				font-weight: bold;
+				color: #333;
+			}
+
+			
+		</style>
+		<script>
+		 var camerag, sceneg, meshg;
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="annotation-markers">
+			
+		</div>
+		<div id="annotation-description">
+			
+		</div>
+
+		<div id="info-hldr">
+			<div class="item">
+				<span class="field-value"></span>
+			</div>
+
+			<div class="item">
+				<span class="field-value"></span>
+			</div>
+
+			<div class="item">
+				<span class="field-value"></span>
+			</div>
+			
+		</div>
+
+		<div id="params-hldr">
+			<!--<div class="form-hldr">
+				<label>Layer Sequence</label>
+				<input id="layer-seq-input" type="number" value="2"/>
+			</div>
+
+			<div class="form-hldr">
+				<label>Layer Depth (Width)</label>
+				<input id="layer-depth-input" type="text" value="2"/>
+			</div>-->
+			
+			<button onclick="handleVisualize()">Visualize</button>
+		</div>
+
+
+		<script type="module">
+
+			import * as THREE from './build/three.module.js';
+
+			import { GLTFLoader } from './jsm/GLTFLoader.js';
+
+			import { OrbitControls } from './jsm/OrbitControls.js';
+
+			import { RoomEnvironment } from './jsm/RoomEnvironment.js';
+
+            import { EffectComposer } from './jsm/EffectComposer.js';
+			import { SSAOPass } from './jsm/SSAOPass.js';
+
+            import { GUI } from './jsm/lil-gui.module.min.js';
+
+			let camera, controls, scene, renderer, pmremGenerator;
+ 
+            let composer;
+
+			let adjustedCanvasWidth, adjustedCanvasHeight;
+			let meshPos;
+			let mouse = {}, raycaster; 
+
+            const depthParams = {
+                "1": 1.0,
+                "2": 1.0, 
+                "3": 1.0,
+                "4": 1.0,
+            }
+
+			let objectGroup, currentLayer, currentDepth;
+
+			let concreteTexture, roughBumpTexture, wallAOMap, wallTexture2;
+
+			let namesToIndex = {}, jugaadCounter = 0, animateFlag = false;
+
+			let info = {
+				"1": {
+						"manufacturer": "Some Manufacturer",
+						"info": "A2 fire rated",
+						"depth": "100 mm",
+				},
+				"2": {
+						"manufacturer": "Some Manufacturer2",
+						"info": "A2 fire rated",
+						"depth": "100 mm",
+				},
+				"3": {
+						"manufacturer": "Some Manufacturer3",
+						"info": "A2 fire rated",
+						"depth": "100 mm",
+				},
+				"4": {
+						"manufacturer": "Some Manufacturer4",
+						"info": "A2 fire rated",
+						"depth": "100 mm",
+				},
+			};
+
+			const infoHolder = document.getElementById('info-hldr');
+
+			 getData();
+			 //init();
+			 //animate();
+
+			function getData(){
+				var xhttp = new XMLHttpRequest();
+				xhttp.onreadystatechange = function() {
+					if (this.status == 200 && jugaadCounter == 0) {
+						
+						const json = JSON.parse(xhttp.responseText);
+						info = json.data['sfs'];
+						console.log(info);
+
+						
+						
+
+					/*	if(info.layer_sequence === '1'){
+							currentLayer = 2;
+						}else if(info.layer_sequence === '2'){
+							currentLayer = 3;
+						}else if(info.layer_sequence === '3'){
+							currentLayer = 4;
+						}else{
+							return;
+						}*/
+
+						init();
+						if(!animateFlag) animate();
+
+						jugaadCounter++;
+					}
+				};
+				xhttp.open("GET", "http://poc.worktil.com/api/sfs", true);
+				xhttp.send();
+			}
+
+			function init() {
+
+				console.log('init called');
+				
+				
+				scene = new THREE.Scene();
+				sceneg = scene;
+				//scene.background = new THREE.Color( 0xcccccc );
+				scene.background = null;
+				
+
+				renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+				renderer.outputEncoding = THREE.sRGBEncoding;
+				//renderer.toneMapping = THREE.ReinhardToneMapping;
+				renderer.toneMappingExposure = 3.3;
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				document.body.appendChild( renderer.domElement );
+
+
+				pmremGenerator = new THREE.PMREMGenerator( renderer );
+				//pmremGenerator.compileEquirectangularShader();
+
+				scene.environment = pmremGenerator.fromScene( new RoomEnvironment(), 0.04 ).texture;
+
+
+				camera = new THREE.PerspectiveCamera( 60, window.innerWidth / window.innerHeight, 1, 1000 );
+				//camera.position.set( 400, 200, 0 );
+                camera.position.set(12,8,-8);
+				camerag = camera;
+
+				// controls
+
+				controls = new OrbitControls( camera, renderer.domElement );
+				controls.listenToKeyEvents( window ); // optional
+
+				
+				controls.enableDamping = true; 
+				controls.dampingFactor = 0.05;
+
+				controls.screenSpacePanning = false;
+
+				const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+				//scene.add(ambientLight);
+
+				//controls.minDistance = 1;
+				//controls.maxDistance = 500;
+				//controls.autoRotate = true;
+				//controls.autoRotateSpeed = 0.5;
+
+				//controls.maxPolarAngle = Math.PI / 2;
+
+                composer = new EffectComposer( renderer );
+
+                const ssaoPass = new SSAOPass( scene, camera, window.innerWidth, window.innerHeight );
+                ssaoPass.kernelRadius = 22.56;
+                ssaoPass.minDistance = 0.001;
+                ssaoPass.maxDistance = 0.078;
+                ssaoPass.output = parseInt(SSAOPass.OUTPUT.Beauty);
+                composer.addPass( ssaoPass );
+                
+                // Init gui
+				/*const gui = new GUI();
+
+                gui.add( ssaoPass, 'output', {
+                    'Default': SSAOPass.OUTPUT.Default,
+                    'SSAO Only': SSAOPass.OUTPUT.SSAO,
+                    'SSAO Only + Blur': SSAOPass.OUTPUT.Blur,
+                    'Beauty': SSAOPass.OUTPUT.Beauty,
+                    'Depth': SSAOPass.OUTPUT.Depth,
+                    'Normal': SSAOPass.OUTPUT.Normal
+                } ).onChange( function ( value ) {
+
+                    ssaoPass.output = parseInt( value );
+
+                } );
+                gui.add( ssaoPass, 'kernelRadius' ).min( 0 ).max( 32 );
+                gui.add( ssaoPass, 'minDistance' ).min( 0.001 ).max( 0.02 );
+                gui.add( ssaoPass, 'maxDistance' ).min( 0.01 ).max( 0.3 );*/
+
+				
+				adjustedCanvasWidth = renderer.domElement.width / window.devicePixelRatio;
+				adjustedCanvasHeight = renderer.domElement.height / window.devicePixelRatio;
+
+				
+				raycaster = new THREE.Raycaster();
+
+				concreteTexture = new THREE.TextureLoader().load( "./assets/concrete_tex.jpeg" );
+				concreteTexture.wrapS = THREE.RepeatWrapping;
+				concreteTexture.wrapT = THREE.RepeatWrapping;
+				concreteTexture.repeat.set( 6, 6 );
+
+				wallTexture2 = new THREE.TextureLoader().load( "./assets/bricktex.jpeg" );
+				wallTexture2.rotation = -Math.PI / 2.0;
+				wallTexture2.wrapS = THREE.RepeatWrapping;
+				wallTexture2.wrapT = THREE.RepeatWrapping;
+				wallTexture2.repeat.set( 8, 8 );
+
+
+				roughBumpTexture = new THREE.TextureLoader().load( "./assets/rough_bump.jpeg" );
+				roughBumpTexture.wrapS = THREE.RepeatWrapping;
+				roughBumpTexture.wrapT = THREE.RepeatWrapping;
+				roughBumpTexture.repeat.set( 3, 3 );
+
+				wallAOMap = new THREE.TextureLoader().load( "./assets/painted_ao.jpeg" );
+
+				
+
+				window.addEventListener( 'resize', onWindowResize );
+				window.addEventListener('pointerdown', raycast);
+
+
+                loadModelFile();
+			}
+
+			function loadModelFile() {
+
+				let indexCounter = 0;
+				const loader = new GLTFLoader();
+				
+                loader.load( './assets/walls8.glb', function ( gltf ) {
+
+							gltf.scene.traverse( function ( child ) {
+
+								if ( child.isMesh ) {
+
+									console.log(child.name);
+
+									//roughnessMipmapper.generateMipmaps( child.material );
+                                    //console.log(child);
+									let alreadyMap = undefined;
+									if(child.material && child.material.map){
+										alreadyMap = child.material.map;
+										
+									}
+                                    child.material = new THREE.MeshStandardMaterial({ roughness: 0.9, metalness: 0.1});
+                                    const mat = child.material;
+									
+									if(alreadyMap)
+									child.material = new THREE.MeshBasicMaterial({ map: alreadyMap});
+									
+
+									if(child.name === "1"){
+										//mat.color.set(0x555555);
+										
+										info[0].layer_texture = "example2";
+
+										if(info[0].layer_texture === 'example1'){
+											mat.map = concreteTexture;
+											mat.color.set(0x999999);
+											mat.bumpMap = roughBumpTexture;
+											mat.bumpScale = 0.01;
+										}else if(info[0].layer_texture === 'example2'){
+											//rough fiber wall
+											//mat.map = wallTexture2;
+											//mat.color.set(0xffffff);
+
+											mat.map = wallTexture2;
+											//mat.color.set(0x999999);
+											//mat.bumpMap = roughBumpTexture;
+											//mat.bumpScale = 0.01;
+										}else{}
+										
+									}
+
+                                    if(child.name === "2"){
+                                        mat.color.set(0xca6778);
+										//mat.bumpMap = roughBumpTexture;
+										//mat.bumpMap.repeat.set(4,4);
+										//mat.bumpScale = 0.005;
+
+										//child.geometry.attributes.uv2 = child.geometry.attributes.uv;
+
+										//mat.aoMap = wallAOMap;
+										//mat.aoMapIntensity = 2.0;
+                                    }
+
+                                    if(child.name === "3"){
+                                        mat.color.set(0xd7b128);
+										//mat.bumpMap = roughBumpTexture;
+										//mat.bumpMap.repeat.set(4,4);
+										//mat.bumpScale = 0.005;
+                                    }
+
+                                    if(child.name === "4"){
+                                        mat.color.set(0x1c3d2e);
+										//mat.bumpMap = roughBumpTexture;
+										//mat.bumpMap.repeat.set(4,4);
+										//mat.bumpScale = 0.005;
+                                    }
+
+									if(child.name.startsWith('bracket')){
+										mat.color.setRGB( 0.5 * 140 / 255.00, 0.5 * 152 / 255.00, 0.5 * 157 / 255.00);
+										mat.roughness = 0.8;
+										mat.metalness = 0.1;
+									}
+
+									if(child.name.startsWith('plate')){
+										mat.color.set(0xfafafa);
+									}
+
+									if(child.name === "plate1" || child.name === "plate2"){
+										mat.color.setRGB( 0.5 * 140 / 255.00, 0.5 * 152 / 255.00, 0.5 * 157 / 255.00);
+									}
+
+                                    //mat.color.set(Math.random() * 0xffffff);
+                                    mat.needsUpdate = true;
+
+
+									setChildIndex(child.name, indexCounter);
+									indexCounter++;
+
+                                    //child.castShadow = true;
+                                    //child.receiveShadow = true;
+
+
+								}
+
+							}); 
+							
+							//gltf.scene.scale.set(90,90,90);
+							//gltf.scene.position.set(0,30,0);
+
+							console.log(namesToIndex);
+
+                            //gltf.scene.scale.set(1,1.3,0.8);
+							
+                            gltf.scene.position.set(0,-6,0)
+							scene.add( gltf.scene );
+
+							objectGroup = gltf.scene;
+
+							objectGroup.children[getChildIndex('1')].scale.z *= 1.05;
+
+
+							/*handleResizeOp(1, 3);
+							handleResizeOp(2, 20);
+							handleResizeOp(3, 3);
+							handleResizeOp(4, 10);*/
+
+							info.forEach((item) => {
+
+								console.log(item);
+								return handleResizeOp(parseInt(item.layer_sequence), parseInt(item.lyer_depth_mm));
+							});
+
+							//handleResizeOp(currentLayer, info.lyer_depth_mm);*/
+							
+
+							//roughnessMipmapper.dispose();
+
+						});
+				 
+
+				    
+				 
+			
+			}
+
+			function setChildIndex(childName, index){
+				namesToIndex[childName] = index;
+			}
+
+			function getChildIndex(childName){
+				return parseInt(namesToIndex[childName]);
+			}
+
+			function handleResizeOp(layerNumber, depth){
+
+					//1, 2, 3, 4
+				
+					//console.log(layerNumber);
+					if(layerNumber == undefined){
+						layerNumber = parseInt(document.getElementById('layer-seq-input').value);
+					}
+
+					if(depth == undefined){
+						depth = parseInt(document.getElementById('layer-depth-input').value);
+					}
+
+					depth = depth / 10.00;
+				
+					//scale unit 1 has 0.39 depth
+					const scalePosUnitFactor = 0.39;
+					 //scale the selected child
+					 const children = objectGroup.children;
+
+					 if(layerNumber === 1){
+
+						//if(depthParams[layerNumber] !== 1.00){
+						
+						
+							const realDepth = (1.00 / depthParams[layerNumber]) * depth;
+						console.log(realDepth);
+					 	children[getChildIndex('1')].scale.x *= realDepth;
+						const distanceToMove = (depthParams[layerNumber] - depth) * 0.5 * scalePosUnitFactor; 
+						//children[layerNumber - 1].position.x -= distanceToMove; 
+
+						//if(depth <= 1.0){
+							children[getChildIndex('2')].position.x -= distanceToMove;
+							children[getChildIndex('3')].position.x -= distanceToMove;
+							children[getChildIndex('4')].position.x -= distanceToMove;
+
+							children[getChildIndex('plate1')].position.x -= distanceToMove;
+							children[getChildIndex('plate2')].position.x -= distanceToMove;
+							children[getChildIndex('plate3')].position.x -= distanceToMove;
+							children[getChildIndex('plate4')].position.x -= distanceToMove;
+
+							children[getChildIndex('bracket1')].position.x -= distanceToMove;
+							children[getChildIndex('bracket2')].position.x -= distanceToMove;
+
+							children[getChildIndex('cb1')].position.x -= distanceToMove;
+							children[getChildIndex('cb2')].position.x -= distanceToMove;
+							children[getChildIndex('cb3')].position.x -= distanceToMove;
+							children[getChildIndex('clip1')].position.x -= distanceToMove;
+							children[getChildIndex('clip2')].position.x -= distanceToMove;
+							
+
+						//}
+
+						
+						depthParams[layerNumber] = depth; 
+					 //}
+					 
+					}else if(layerNumber == 2){
+						
+						const realDepth = (1.00 / depthParams[layerNumber]) * depth;
+						console.log(realDepth);
+					 	children[getChildIndex('2')].scale.x *= realDepth;
+						const distanceToMove = (depthParams[layerNumber] - depth) * 0.5 * scalePosUnitFactor; 
+						children[getChildIndex('2')].position.x -= distanceToMove; 
+
+						//if(depth <= 1.0){
+							children[getChildIndex('3')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('4')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('plate1')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('plate2')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('plate3')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('plate4')].position.x -= distanceToMove * 2.0;
+							
+							children[getChildIndex('bracket1')].scale.z *= realDepth;
+							children[getChildIndex('bracket1')].position.x -= distanceToMove * 3.0;
+
+							children[getChildIndex('bracket2')].scale.z *= realDepth;
+							children[getChildIndex('bracket2')].position.x -= distanceToMove * 3.0;
+
+							children[getChildIndex('cb1')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('cb2')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('cb3')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('clip1')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('clip2')].position.x -= distanceToMove * 2.0;
+
+							//children[layerNumber + 7].position.x -= distanceToMove * 2.0;
+							
+						//}
+
+						
+						depthParams[layerNumber] = depth; 
+
+					}else if(layerNumber == 3){
+						const realDepth = (1.00 / depthParams[layerNumber]) * depth;
+						console.log(realDepth);
+					 	children[getChildIndex('3')].scale.x *= realDepth;
+						const distanceToMove = (depthParams[layerNumber] - depth) * 0.5 * scalePosUnitFactor; 
+						children[getChildIndex('3')].position.x -= distanceToMove; 
+
+						//if(depth <= 1.0){
+							children[getChildIndex('4')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('plate3')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('plate4')].position.x -= distanceToMove * 2.0;
+
+							children[getChildIndex('cb1')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('cb2')].position.x -= distanceToMove *2.0;
+							children[getChildIndex('cb3')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('clip1')].position.x -= distanceToMove * 2.0;
+							children[getChildIndex('clip2')].position.x -= distanceToMove * 2.0;
+							//children[layerNumber + 1].position.x -= distanceToMove * 2.0;
+						//}
+
+						
+						depthParams[layerNumber] = depth; 
+					}else if(layerNumber == 4){
+						const realDepth = (1.00 / depthParams[layerNumber]) * depth;
+						console.log(realDepth);
+					 	children[getChildIndex('4')].scale.x *= realDepth;
+						const distanceToMove = (depthParams[layerNumber] - depth) * 0.5 * scalePosUnitFactor; 
+						children[getChildIndex('4')].position.x -= distanceToMove; 
+						children[getChildIndex('plate3')].position.x -= distanceToMove * 2.0;
+						children[getChildIndex('plate4')].position.x -= distanceToMove * 2.0;
+
+						children[getChildIndex('clip1')].scale.y *= realDepth * 0.6;
+
+						children[getChildIndex('clip2')].scale.y *= realDepth * 0.6;
+						//children[getChildIndex('clip2')].position.x -= distanceToMove * 3.0;
+
+						//if(depth <= 1.0){
+							//children[layerNumber].position.x -= distanceToMove * 2.0;
+							//children[layerNumber + 1].position.x -= distanceToMove * 2.0;
+						//}
+
+						
+						depthParams[layerNumber] = depth; 
+					}else{
+
+					}
+					 
+					 
+
+					 
+
+					 
+
+					 
+
+			}	
+
+			function handleVisualize(){
+
+				/*jugaadCounter = 0;
+
+				depthParams[1] = 1.0;
+				depthParams[2] = 1.0;
+				depthParams[3] = 1.0;
+				depthParams[4] = 1.0;
+
+				scene.clear();
+				getData();*/
+
+				window.location.href = window.location.href;
+			}
+
+			window.handleResizeOp = handleResizeOp;
+			window.handleVisualize = handleVisualize;
+
+			function onWindowResize() {
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				adjustedCanvasWidth = renderer.domElement.width / window.devicePixelRatio;
+				adjustedCanvasHeight = renderer.domElement.height / window.devicePixelRatio;
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				controls.update(); 
+
+				render();
+
+				animateFlag = true;
+
+			}
+
+			function render() {
+
+				//if(objectGroup) objectGroup.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+
+                //composer.render();
+
+			}
+		
+			
+			function raycast(event){
+				
+				//controls.autoRotate = false;
+				//setTimeout(() => (controls.autoRotate = true), 8000);
+				
+				mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+				mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+				raycaster.setFromCamera( mouse, camera );
+
+				
+				const intersects = raycaster.intersectObjects( scene.children, true );
+
+				if(intersects.length > 0){
+
+					//intersects[ i ].object.material.color.set( 0xff0000 );
+					const selectedObjectName = intersects[0].object.name;
+
+					const selectedObjectInfo = info[parseInt(selectedObjectName) -1];
+
+					//const infoHolder = document.getElementById('info-hldr');
+
+					if(infoHolder.style.opacity !== 1.0) infoHolder.style.opacity = 1.0;
+
+					infoHolder.children[0].innerHTML = '&bull; ' + selectedObjectInfo.manufacture_name + ' (manufacturer)';
+					infoHolder.children[1].innerHTML = '&bull; ' + 'Depth ' + selectedObjectInfo.lyer_depth_mm + ' mm';
+					infoHolder.children[2].innerHTML = '&bull; ' + 'Fire Rating: ' + selectedObjectInfo.fire_ratings;
+
+					infoHolder.style.top = event.clientY + 10 +'px';
+					infoHolder.style.left = event.clientX + 10 +'px';
+
+					setTimeout(() => {
+						infoHolder.style.opacity = 0;
+					}, 5000);
+
+				}else{
+					if(infoHolder.style.opacity == 1.0) infoHolder.style.opacity = 0; 
+				}
+
+
+
+			}
+			
+
+		</script>
+
+	</body>
+</html>
+
