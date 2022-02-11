@@ -299,6 +299,7 @@
                 "2": 1.0, 
                 "3": 1.0,
                 "4": 1.0,
+				"clip": 1.00,
             }
 
 			let objectGroup, currentLayer, currentDepth;
@@ -346,20 +347,38 @@
 						console.log(info);
 
 						
-						
-
-					/*	if(info.layer_sequence === '1'){
-							currentLayer = 2;
-						}else if(info.layer_sequence === '2'){
-							currentLayer = 3;
-						}else if(info.layer_sequence === '3'){
-							currentLayer = 4;
+						if(!animateFlag) {
+							init();
+							animate();
+							animateFlag = true;
 						}else{
-							return;
-						}*/
+							info.forEach((item) => {
 
-						init();
-						if(!animateFlag) animate();
+								console.log(item);
+								return handleResizeOp(parseInt(item.layer_sequence), parseInt(item.lyer_depth_mm));
+								});
+
+							let mat = objectGroup.children[getChildIndex('1')].material;
+
+							if(info[0].layer_texture === 'example1'){
+
+											mat.map = concreteTexture;
+											mat.color.set(0x999999);
+											mat.bumpMap = roughBumpTexture;
+											mat.bumpScale = 0.01;
+							}else if(info[0].layer_texture === 'example2'){
+											//rough fiber wall
+											//mat.map = wallTexture2;
+											//mat.color.set(0xffffff);
+
+											mat.map = wallTexture2;
+											//mat.color.set(0x999999);
+											//mat.bumpMap = roughBumpTexture;
+											//mat.bumpScale = 0.01;
+							}else{}	
+
+							mat.needsUpdate = true;
+						}
 
 						jugaadCounter++;
 					}
@@ -513,7 +532,7 @@
 									if(child.name === "1"){
 										//mat.color.set(0x555555);
 										
-										info[0].layer_texture = "example2";
+										//info[0].layer_texture = "example2";
 
 										if(info[0].layer_texture === 'example1'){
 											mat.map = concreteTexture;
@@ -726,6 +745,7 @@
 
 						
 						depthParams[layerNumber] = depth; 
+						//depthParams[layerNumber] = depth; 
 
 					}else if(layerNumber == 3){
 						const realDepth = (1.00 / depthParams[layerNumber]) * depth;
@@ -758,9 +778,9 @@
 						children[getChildIndex('plate3')].position.x -= distanceToMove * 2.0;
 						children[getChildIndex('plate4')].position.x -= distanceToMove * 2.0;
 
-						children[getChildIndex('clip1')].scale.y *= realDepth * 0.6;
+						children[getChildIndex('clip1')].scale.y *= ((realDepth * 0.6) / depthParams['clip']);
 
-						children[getChildIndex('clip2')].scale.y *= realDepth * 0.6;
+						children[getChildIndex('clip2')].scale.y *= ((realDepth * 0.6) / depthParams['clip']);
 						//children[getChildIndex('clip2')].position.x -= distanceToMove * 3.0;
 
 						//if(depth <= 1.0){
@@ -770,6 +790,7 @@
 
 						
 						depthParams[layerNumber] = depth; 
+						depthParams['clip'] = realDepth * 0.60;
 					}else{
 
 					}
@@ -786,17 +807,19 @@
 
 			function handleVisualize(){
 
-				/*jugaadCounter = 0;
+				jugaadCounter = 0;
 
-				depthParams[1] = 1.0;
+				/*depthParams[1] = 1.0;
 				depthParams[2] = 1.0;
 				depthParams[3] = 1.0;
-				depthParams[4] = 1.0;
+				depthParams[4] = 1.0;*/
 
-				scene.clear();
-				getData();*/
+				//scene.clear();
+				getData();
 
-				window.location.href = window.location.href;
+				
+
+				//window.location.href = window.location.href;
 			}
 
 			window.handleResizeOp = handleResizeOp;
@@ -822,7 +845,7 @@
 
 				render();
 
-				animateFlag = true;
+				
 
 			}
 
